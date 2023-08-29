@@ -19,9 +19,10 @@ public class CardTest {
     }
 
     @Test
-    public void shouldSuccessFillForm() {
+    public void shouldSuccessFillForm() throws InterruptedException {
         open("http://localhost:9999");
-        $("[data-test-id='city'] input").setValue("Уфа");
+        //Thread.sleep(5000);
+        $("[data-test-id='city'] input").setValue("Москва");
         String bookedDate = makeDate(4, "dd.MM.yyyy");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME));
         $("[data-test-id='date'] input").sendKeys(bookedDate);
